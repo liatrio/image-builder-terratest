@@ -1,0 +1,7 @@
+branches: 
+  - main
+repositoryUrl: https://github.com/liatrio/image-builder-terratest.git
+
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - "@semantic-release/github"
