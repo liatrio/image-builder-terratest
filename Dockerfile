@@ -3,7 +3,7 @@ FROM alpine:3.15 AS TERRAFORM
 
 RUN apk --no-cache add gpgme
 
-ENV TERRAFORM_VERSION 1.2.5
+ENV TERRAFORM_VERSION 1.2.9
 COPY sig/hashicorp.asc .
 ADD https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip .
 ADD https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS .
@@ -29,7 +29,7 @@ RUN openssl sha1 -sha256 /aws-iam-authenticator
 RUN chmod +x /aws-iam-authenticator
 
 # Main image includes golang, terraform, kubectl, Keycloak
-FROM alpine:3.11
+FROM alpine:3.15
 
 RUN apk add --no-cache \
     curl \
@@ -47,7 +47,7 @@ RUN mkdir -m 0777 ${GOPATH} ${GOPATH}/src ${GOPATH}/bin
 COPY --from=TERRAFORM terraform /usr/bin
 
 ## Install Kubectl
-ENV KUBECTL_VERSION v1.24.0
+ENV KUBECTL_VERSION v1.25.0
 ADD https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/bin
 RUN chmod a+x /usr/bin/kubectl
 

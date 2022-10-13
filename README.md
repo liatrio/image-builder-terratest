@@ -34,7 +34,7 @@ stage('Build') {
 ```
 
 ## What is installed on this image?
-- Version [1.2.X](https://releases.hashicorp.com/terraform/1.2.5/) of infrastructure as code tool Terraform
+- Version [1.2.X](https://releases.hashicorp.com/terraform/1.2.9/) of infrastructure as code tool Terraform
 - Version [1.21.X](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html) of command-line tool aws-iam-authenticator
-- Version [1.24.X](https://storage.googleapis.com/kubernetes-release/release/v1.24.0/bin/linux/amd64/kubectl) of kubectl, a command-line tool that allows you to run commands against Kubernetes clusters
-- Packages included in [Alpine 3.11](https://alpinelinux.org/posts/Alpine-3.11.0-released.html)
+- Version [1.25.X](https://storage.googleapis.com/kubernetes-release/release/v1.25.0/bin/linux/amd64/kubectl) of kubectl, a command-line tool that allows you to run commands against Kubernetes clusters
+- Packages included in [Alpine 3.15](https://alpinelinux.org/posts/Alpine-3.15.0-released.html)
